@@ -96,11 +96,12 @@
     color:white;
     background-color: black;
     cursor:pointer;
-    height: 7vmin;
-    width:7vmin;
     border: 0.4vmin solid rgb(200,200,200);
-    border-radius: 100%;
     transition: transform 0.3s, box-shadow 0.3s; /* Removed background-color transition */
+    height: 40px; /* Adjust the height to make it suitable for smaller screens */
+    width: 40px; /* Ensure the width is proportional to the height for a circular button */
+    border-radius: 50%; /* Make the button circular */
+            
 }
 
 .zoom-button button:hover {
