@@ -42,7 +42,6 @@
             top: 40%;
             transform: translateY(-50%);
             transition: all 1s cubic-bezier(0.76, 0.67, 0.65, 0.91);
-            overflow: hidden; /* Ensure the image doesn't overflow the container */
         }
 
         .card-group,
@@ -50,26 +49,25 @@
             width: 30vmin;
         }
 
-        .card-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensure the image covers the container */
-        }
-
         .big-card:nth-child(1) { /* song redirector card*/
             transform: translateX(-10%) rotate(-1deg);
+            background-image: url("https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D");
+            background-size: cover;
+            background-position: center;
         }
 
         .big-card:nth-child(2) { /* password card*/
             transform: rotate(2deg);
+            background-image: url("https://plus.unsplash.com/premium_photo-1701179596614-9c64f50cda76?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGQlMjBpb3MlMjB3YWxscGFwZXIlMjBmb3IlMjBwYXNzd29yZCUyMG1hbmFnZXJ8ZW58MHx8MHx8fDA%3D");
+            background-size: cover;
+            background-position: center;
         }
 
         .big-card:nth-child(3) { /* whatsapp card*/
             transform: translateX(-6%) rotate(5deg);
-        }
-
-        .big-card:nth-child(4){ /*browser card */
-            transform:rotate(3deg);
+            background-image: url("https://images.unsplash.com/photo-1614680376408-81e91ffe3db7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2hhdHNhcHB8ZW58MHx8MHx8fDA%3D9");
+            background-size: cover;
+            background-position: center;
         }
 
         .card-group:hover > .big-card:nth-child(1) {
@@ -78,10 +76,6 @@
 
         .card-group:hover > .big-card:nth-child(3) {
             transform: translate(85%, 16%) rotate(24deg)
-        }
-        
-        .card-group:hover > .big-card:nth-child(4) {
-            transform: translate(135%, 26%) rotate(40deg)
         }
 
         .zoom-button {
@@ -93,88 +87,77 @@
         }
 
         .zoom-button button {
-            background-color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 2.5vmin;
-            color:white;
-            background-color: black;
-            cursor:pointer;
-            height: 7vmin;
-            width:7vmin;
-            border: 0.4vmin solid rgb(200,200,200);
-            border-radius: 100%;
-            transition: transform 0.3s, box-shadow 0.3s; /* Removed background-color transition */
-        }
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 2.5vmin;
+    color:white;
+    background-color: black;
+    cursor:pointer;
+    height: 7vmin;
+    width:7vmin;
+    border: 0.4vmin solid rgb(200,200,200);
+    border-radius: 100%;
+    transition: transform 0.3s, box-shadow 0.3s; /* Removed background-color transition */
+}
 
-        .zoom-button button:hover {
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Glow effect */
-        }
+.zoom-button button:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Glow effect */
+}
 
-        .zoom-button button:active {
-            box-shadow: none; /* Remove glow effect when button is clicked */
-            transition: box-shadow 0.3s; /* Add transition for glow removal */
-        }
+.zoom-button button:active {
+    box-shadow: none; /* Remove glow effect when button is clicked */
+    transition: box-shadow 0.3s; /* Add transition for glow removal */
+}
 
-        .zoom-button button:focus {
-            outline: none; /* Remove focus outline */
-        }
+.zoom-button button:focus {
+    outline: none; /* Remove focus outline */
+}
 
-        .zoom-button button.clicked {
-            transition: box-shadow 0.3s; /* Add transition for glow restoration */
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Restore glow effect */
-            pointer-events: none; /* Disable button clicks during transition */
-        }
+.zoom-button button.clicked {
+    transition: box-shadow 0.3s; /* Add transition for glow restoration */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Restore glow effect */
+    pointer-events: none; /* Disable button clicks during transition */
+}
 
-        .zoom-button button.clicked:after {
-            content: ""; /* Add a pseudo-element for the transition */
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: transparent;
-            z-index: -1; /* Behind the button */
-            transition: background-color 0.5s; /* Transition for the pseudo-element */
-        }
+.zoom-button button.clicked:after {
+    content: ""; /* Add a pseudo-element for the transition */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -1; /* Behind the button */
+    transition: background-color 0.5s; /* Transition for the pseudo-element */
+}
 
-        .zoom-button button.clicked:hover:after {
-            background-color: rgba(255, 255, 255, 0.5); /* Glow effect on pseudo-element */
-        }
+.zoom-button button.clicked:hover:after {
+    background-color: rgba(255, 255, 255, 0.5); /* Glow effect on pseudo-element */
+}
+.card-group.zoomed-out > .big-card:nth-child(1) {
+    transform: translate(-85%, 16%) rotate(-24deg);
+}
 
-        .card-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.card-group.zoomed-out > .big-card:nth-child(3) {
+    transform: translate(85%, 16%) rotate(24deg);
+}
 
-        .card-group.zoomed-out > .big-card:nth-child(1) {
-            transform: translate(-85%, 16%) rotate(-24deg);
-        }
 
-        .card-group.zoomed-out > .big-card:nth-child(3) {
-            transform: translate(85%, 16%) rotate(24deg);
-        }
+    
+
+
     </style>
 </head>
 <body>
     <h2>Click A Project</h2>
     
     <div class="card-group" id="cardGroup">   
-        <div class="big-card" onclick="SongCardClick()">
-            <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D" alt="Song Redirector" class="card-img">
-        </div>
-        <div class="big-card" onclick="PasswordCardClick()">
-            <img src="https://plus.unsplash.com/premium_photo-1701179596614-9c64f50cda76?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGQlMjBpb3MlMjB3YWxscGFwZXIlMjBmb3IlMjBwYXNzd29yZCUyMG1hbmFnZXJ8ZW58MHx8MHx8fDA%3D" alt="Password Card" class="card-img">
-        </div>
-        <div class="big-card" onclick="WhatsappCardClick()">
-            <img src="https://images.unsplash.com/photo-1614680376408-81e91ffe3db7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2hhdHNhcHB8ZW58MHx8MHx8fDA%3D9" alt="Whatsapp Redirector" class="card-img">
-        </div>
-        <div class="big-card" onclick="BrowserCardClick()">
-            <img src="Zenith-logo.png" alt="Zenith Browser" class="card-img">
-        </div>
+        <div class="big-card" onclick="SongCardClick()"></div>
+        <div class="big-card" onclick="PasswordCardClick()"></div>
+        <div class="big-card" onclick="WhatsappCardClick()"></div>
     </div>
 
     <div class="zoom-button">
@@ -203,16 +186,6 @@
             console.log("Zoom button clicked");
             var cardGroup = document.querySelector('.card-group');
             cardGroup.classList.toggle('zoomed-out');
-        }
-
-        function PasswordCardClick() {
-            console.log("PasswordCardClicked");
-            window.location.href = "https://justzaixz.github.io/Password-Generator/";
-        }
-
-        function BrowserCardClick(){
-            console.log("BrowserCardClicked");
-            window.location.href = "https://justzaixz.github.io/Zenith-Zains-browser/";
         }
     </script>
 </body>
